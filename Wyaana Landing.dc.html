@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="./assets/products/majlis-front.webp" data-resource-id="majlis-front" />
+<meta name="ext-resource-dependency" content="./assets/products/majlis-back.webp" data-resource-id="majlis-back" />
+<meta name="ext-resource-dependency" content="./assets/products/kuthban-front.webp" data-resource-id="kuthban-front" />
+<meta name="ext-resource-dependency" content="./assets/products/kuthban-back.webp" data-resource-id="kuthban-back" />
+<meta name="ext-resource-dependency" content="./assets/products/fares-front.webp" data-resource-id="fares-front" />
+<meta name="ext-resource-dependency" content="./assets/products/fares-back.webp" data-resource-id="fares-back" />
+<meta name="ext-resource-dependency" content="./assets/ambience.mp3" data-resource-id="ambience" />
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#f1eeed"/></svg></template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-Thin-ffa63e02.otf') format('opentype');font-weight:100;font-style:normal;font-display:swap}@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-ExtraLight-a6bdafce.otf') format('opentype');font-weight:200;font-style:normal;font-display:swap}@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-Light-77ccc209.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-Regular-e8fd162c.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-Medium-f2c0cff7.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-Bold-83d1d154.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'The Year of the Camel';src:url('./uploads/TheYearofTheCamel-ExtraBold-2a4dfbab.otf') format('opentype');font-weight:800;font-style:normal;font-display:swap}</style>
+<style>@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-Air.otf') format('opentype');font-weight:100 200;font-style:normal;font-display:swap}@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-Light.otf') format('opentype');font-weight:300 400;font-style:normal;font-display:swap}@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-LightItalic.otf') format('opentype');font-weight:300 400;font-style:italic;font-display:swap}@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-Bold.otf') format('opentype');font-weight:500 700;font-style:normal;font-display:swap}@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-BoldItalic.otf') format('opentype');font-weight:500 700;font-style:italic;font-display:swap}@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-Black.otf') format('opentype');font-weight:800 900;font-style:normal;font-display:swap}@font-face{font-family:'Aeonik Pro';src:url('./uploads/AeonikPro-BlackItalic.otf') format('opentype');font-weight:800 900;font-style:italic;font-display:swap}</style>
+
+<script src="./image-slot.js"></script>
+<style>
+h1,h2,h3{font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif!important}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif!important}
+[dir="rtl"] *{font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif!important;letter-spacing:0!important;text-transform:none!important;word-spacing:normal!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f1eeed;color:#241b17;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#241b17;text-decoration:none}a:hover{color:#6e625c}
+@keyframes wySwayA{0%{transform:rotate(-4deg) translateX(0)}50%{transform:rotate(4deg) translateX(40px)}100%{transform:rotate(-4deg) translateX(0)}}
+@keyframes wySwayB{0%{transform:rotate(3.5deg) translateY(0)}50%{transform:rotate(-4.5deg) translateY(36px)}100%{transform:rotate(3.5deg) translateY(0)}}
+@keyframes wyFrond{0%{transform:rotate(var(--a)) scaleY(1)}50%{transform:rotate(calc(var(--a) + 4deg)) scaleY(1.06)}100%{transform:rotate(var(--a)) scaleY(1)}}
+@keyframes wyBeanDrop{from{transform:translateY(-170px);opacity:0}55%{opacity:1}to{transform:translateY(0);opacity:1}}
+@keyframes wyBeanSway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
+@media (prefers-reduced-motion:reduce){[data-beans],[data-beans] *{animation:none!important}}
+@keyframes wyOrb{0%{opacity:0;transform:translate(-50%,-50%) rotateY(-75deg) scale(.92);filter:blur(5px)}8%{opacity:1;transform:translate(-50%,-50%) rotateY(-30deg) scale(.98);filter:blur(0)}30%{opacity:1;transform:translate(-50%,-50%) rotateY(0deg) scale(1);filter:blur(0)}38%{opacity:0;transform:translate(-50%,-50%) rotateY(75deg) scale(.92);filter:blur(5px)}100%{opacity:0;transform:translate(-50%,-50%) rotateY(75deg) scale(.92);filter:blur(5px)}}
+@keyframes wyOrbSheen{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){[data-lines] img{animation:none!important;opacity:0}[data-lines] img:first-child{opacity:1!important}}
+@keyframes wyFadeIn{from{opacity:0}to{opacity:1}}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] span,[dir="rtl"] a,[dir="rtl"] button,[dir="rtl"] p,[dir="rtl"] dt,[dir="rtl"] dd,[dir="rtl"] input,[dir="rtl"] textarea{letter-spacing:0!important;text-transform:none!important}
+@media (max-width:720px){
+  header[style]{top:calc(18px + env(safe-area-inset-top))!important;max-width:calc(100vw - 32px)!important}
+  header[style] nav a{padding:12px 14px!important}
+  #home{padding:calc(132px + env(safe-area-inset-top)) 26px calc(56px + env(safe-area-inset-bottom))!important}
+  #home > div{gap:clamp(44px,9vh,72px)!important}
+  #home > div > div:first-child{gap:26px!important}
+  section:not(#home){padding-top:clamp(80px,11vw,154px)!important;padding-bottom:clamp(80px,11vw,154px)!important;padding-left:26px!important;padding-right:26px!important}
+  section:not(#home) > div{gap:clamp(36px,5.5vw,70px)!important}
+  footer{padding:36px 26px 44px!important}
+  article,aside{padding-left:calc(100% * 0)!important}
+  button[aria-label="Sound"]{bottom:calc(30px + env(safe-area-inset-bottom))!important;inset-inline-end:26px!important}
+}
+@keyframes wyFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(-.4deg)}}
+@keyframes wyArrow{0%,100%{transform:translateY(0);opacity:.85}50%{transform:translateY(14px);opacity:1}}
+@keyframes wyPalmA{0%{transform:rotate(-2.5deg) translate(0,0) scale(1.08)}33%{transform:rotate(1.5deg) translate(-60px,30px) scale(1.14)}66%{transform:rotate(3deg) translate(40px,-40px) scale(1.1)}100%{transform:rotate(-2.5deg) translate(0,0) scale(1.08)}}
+@keyframes wyPalmB{0%{transform:scaleX(-1) rotate(.8deg) translate(0,0)}50%{transform:scaleX(-1) rotate(-1.4deg) translate(14px,-16px) scale(1.04)}100%{transform:scaleX(-1) rotate(.8deg) translate(0,0)}}
+@keyframes wyZoomIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+</style>
+<style></style>
+<style>@font-face{font-family:'Wyaana Arabic';src:url('./assets/fonts/IBMPlexSansArabic-Regular.ttf') format('truetype');font-weight:300 500;font-display:block}@font-face{font-family:'Wyaana Arabic';src:url('./assets/fonts/IBMPlexSansArabic-SemiBold.ttf') format('truetype');font-weight:600;font-display:block}@font-face{font-family:'Wyaana Arabic';src:url('./assets/fonts/IBMPlexSansArabic-Bold.ttf') format('truetype');font-weight:700 900;font-display:block}</style>
+</helmet>
+<div dir="{{ dir }}" style="position:relative;min-height:100vh;isolation:isolate;overflow-x:clip;cursor:{{ cursorStyle }}">
+  <div ref="{{ rayRef }}" style="position:fixed;left:0;top:0;width:220px;height:220px;margin:-110px 0 0 -110px;z-index:40;pointer-events:none;border-radius:50%;background:radial-gradient(circle at center,rgba(255,255,255,.55) 0%,rgba(255,255,255,.18) 35%,rgba(255,255,255,0) 70%);mix-blend-mode:soft-light;filter:blur(14px);opacity:0;will-change:transform,opacity"></div>
+  <img ref="{{ ringRef }}" src="./assets/cursor-oval.png" alt="" style="position:fixed;left:0;top:0;width:32px;height:auto;margin:-15px 0 0 -16px;z-index:41;pointer-events:none;opacity:0;will-change:transform;transition:opacity .3s,filter .3s;display:block">
+  <div style="position:fixed;inset:-6%;z-index:-2;background:#f1eeed url('./assets/fabric.png') center/cover no-repeat;will-change:transform;filter:brightness(1.12) contrast(.92)" ref="{{ bgRef }}"></div>
+  <div style="position:fixed;inset:0;z-index:-2;pointer-events:none;background:rgba(255,255,255,.22)"></div>
+  {{ shadowLayer }}
+  <div ref="{{ palmRef }}" style="position:fixed;inset:-12%;z-index:-1;pointer-events:none;mix-blend-mode:multiply;opacity:{{ palmOpacity }};will-change:transform">
+    <img src="./assets/palm-shadow-2.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;display:block;filter:blur(2px);transform-origin:50% 50%;animation:wyPalmA 26s ease-in-out infinite"></div>
+  <div ref="{{ lightRef }}" style="position:fixed;left:0;top:0;width:1400px;height:1400px;margin:-700px 0 0 -700px;z-index:-1;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.6) 0%,rgba(255,255,255,.3) 22%,rgba(255,255,255,.08) 45%,rgba(255,255,255,0) 70%);mix-blend-mode:soft-light;will-change:transform,opacity;transition:opacity .8s"></div>
+
+  <sc-if value="{{ pastFold }}" hint-placeholder-val="{{ false }}">
+    <button onClick="{{ toTop }}" aria-label="{{ topLabel }}" style="position:fixed;bottom:22px;inset-inline-end:22px;z-index:55;appearance:none;border:none;background:transparent;color:#241b17;font:inherit;font-size:13px;letter-spacing:.06em;padding:6px;min-height:44px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px" style-hover="color:#6e625c"><span style="position:relative;width:46px;height:28px;display:block"><span style="position:absolute;inset:0;border:1.5px solid currentColor;border-radius:50%;transform:rotate(-32deg)"></span></span><span>{{ topLabel }}</span></button>
+  </sc-if>
+
+  <header style="position:fixed;top:16px;left:50%;transform:translateX(-50%);width:max-content;max-width:min(92vw,360px);z-index:50;display:flex;flex-direction:column;align-items:stretch;border-radius:28px;background:rgba(241,238,237,.45);backdrop-filter:blur(22px) saturate(1.3);-webkit-backdrop-filter:blur(22px) saturate(1.3);box-shadow:0 10px 40px rgba(36,27,23,.08);overflow:hidden;transition:box-shadow .5s,background .5s" style-hover="box-shadow:0 16px 50px rgba(36,27,23,.14);background:rgba(241,238,237,.6)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 22px">
+      <a href="#home" style="display:flex;align-items:center"><img src="./assets/logo-dark.png" alt="Wyaana" style="height:30px;width:auto;display:block"></a>
+      <div style="display:flex;align-items:center;gap:6px">
+      <button onClick="{{ toggleLang }}" style="appearance:none;border:none;background:rgba(36,27,23,.08);color:#241b17;border-radius:50%;width:52px;height:36px;padding:0;font:inherit;font-size:13px;cursor:pointer;display:grid;place-items:center;transform:rotate(-32deg);transition:background .3s,color .3s" style-hover="background:#241b17;color:#f1eeed"><span style="display:block;transform:rotate(32deg)">{{ t.langBtn }}</span></button>
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="appearance:none;border:none;background:rgba(36,27,23,.08);color:#241b17;border-radius:50%;width:52px;height:36px;padding:0;display:grid;place-items:center;cursor:pointer;transform:rotate(-32deg);transition:background .3s,color .3s" style-hover="background:#241b17;color:#f1eeed">
+          <span style="display:flex;flex-direction:column;gap:4px;transform:rotate(32deg)"><i style="display:block;width:14px;height:1.5px;background:currentColor"></i><i style="display:block;width:14px;height:1.5px;background:currentColor"></i></span>
+        </button>
+      </div>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="display:flex;flex-direction:column;padding:6px 10px 12px;font-size:15px;font-weight:500;letter-spacing:.03em">
+        <a href="#home" onClick="{{ closeMenu }}" style="padding:10px 12px;border-radius:12px;transition:background .3s,padding-left .3s" style-hover="background:rgba(36,27,23,.08);color:#241b17;padding-left:18px">{{ t.nav.home }}</a>
+        <a href="https://shop.wyaana.ae/" onClick="{{ goShopNav }}" style="padding:10px 12px;border-radius:12px;transition:background .3s,padding-left .3s" style-hover="background:rgba(36,27,23,.08);color:#241b17;padding-left:18px">{{ t.nav.shop }}</a>
+        <a href="./About.dc.html" onClick="{{ closeMenu }}" style="padding:10px 12px;border-radius:12px;transition:background .3s,padding-left .3s" style-hover="background:rgba(36,27,23,.08);color:#241b17;padding-left:18px">{{ t.nav.story }}</a>
+        <a href="./Trade.dc.html" onClick="{{ closeMenu }}" style="padding:10px 12px;border-radius:12px;transition:background .3s,padding-left .3s" style-hover="background:rgba(36,27,23,.08);color:#241b17;padding-left:18px">{{ t.nav.trade }}</a>
+        <a href="./Contact.dc.html" onClick="{{ closeMenu }}" style="padding:10px 12px;border-radius:12px;transition:background .3s,padding-left .3s" style-hover="background:rgba(36,27,23,.08);color:#241b17;padding-left:18px">{{ t.nav.contact }}</a>
+        <span style="padding:10px 12px 0;font-size:12px;color:#6e625c">{{ t.tag }}</span>
+      </nav>
+    </sc-if>
+  </header>
+
+  <sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Cart" style="position:fixed;inset:0;z-index:70;display:flex;justify-content:flex-end;background:rgba(36,27,23,.18);animation:wyFadeIn .4s both" onClick="{{ closeCart }}">
+      <aside onClick="{{ stop }}" style="width:min(100%,420px);height:100%;background:#f1eeed;display:flex;flex-direction:column;padding:28px 28px 24px;gap:24px;box-shadow:-20px 0 60px rgba(36,27,23,.12);overflow:auto">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:12px;letter-spacing:.3em;text-transform:uppercase">{{ t.cart.title }}</span>
+          <button onClick="{{ closeCart }}" aria-label="Close" style="appearance:none;border:none;background:transparent;font:inherit;font-size:22px;cursor:pointer;min-width:44px;min-height:44px;color:#241b17">×</button>
+        </div>
+        <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#6e625c">{{ t.cart.empty }}</p>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <sc-for list="{{ cartItems }}" as="c" hint-placeholder-count="0">
+            <div style="display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:start">
+              <div style="position:relative;width:72px;height:96px"><image-slot id="{{ c.slot }}" src="{{ c.src }}" shape="rounded" radius="6" fit="contain" placeholder=""></image-slot></div>
+              <div style="display:flex;flex-direction:column;gap:4px;font-size:14px">
+                <span style="font-weight:600">{{ c.name }}</span>
+                <span style="color:#6e625c">{{ c.size }}</span>
+                <div style="display:flex;align-items:center;gap:10px;margin-top:6px">
+                  <button onClick="{{ c.dec }}" style="appearance:none;border:1px solid rgba(36,27,23,.3);background:transparent;border-radius:999px;width:30px;height:30px;font:inherit;cursor:pointer;color:#241b17">−</button>
+                  <span>{{ c.qty }}</span>
+                  <button onClick="{{ c.inc }}" style="appearance:none;border:1px solid rgba(36,27,23,.3);background:transparent;border-radius:999px;width:30px;height:30px;font:inherit;cursor:pointer;color:#241b17">+</button>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-size:14px">
+                <span style="color:#6e625c">{{ t.cart.priceTbc }}</span>
+                <button onClick="{{ c.remove }}" style="appearance:none;border:none;background:transparent;font:inherit;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6e625c;cursor:pointer;padding:0;min-height:30px" style-hover="color:#241b17">{{ t.cart.remove }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:14px;border-top:1px solid rgba(36,27,23,.12);padding-top:18px">
+          <div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:#6e625c">{{ t.cart.subtotal }}</span><span>{{ t.cart.priceTbc }}</span></div>
+          <button disabled="" style="appearance:none;border:none;min-height:50px;border-radius:999px;background:#241b17;color:#f1eeed;font:inherit;font-weight:500;font-size:15px;opacity:.45;cursor:not-allowed">{{ t.cart.checkout }}</button>
+          <span style="font-size:12px;line-height:1.5;color:#6e625c;text-align:center">{{ t.cart.note }}</span>
+        </div>
+      </aside>
+    </div>
+  </sc-if>
+
+  
+
+  <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Category" style="position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:clamp(20px,5vw,72px);background:rgba(241,238,237,.78);backdrop-filter:blur(30px) saturate(1.2);-webkit-backdrop-filter:blur(30px) saturate(1.2);animation:wyFadeIn .9s cubic-bezier(.2,.7,.2,1) both;overflow:auto">
+      <button onClick="{{ deselect }}" aria-label="Close" style="position:fixed;top:24px;right:24px;appearance:none;border:none;background:rgba(36,27,23,.08);color:#241b17;border-radius:999px;width:44px;height:44px;font:inherit;font-size:20px;cursor:pointer;z-index:2" style-hover="background:#241b17;color:#f1eeed">×</button>
+      <sc-if value="{{ inCategory }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:clamp(28px,4vw,48px);width:100%;max-width:1200px;animation:wyZoomIn 1.1s cubic-bezier(.2,.7,.2,1) both">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(24px,4vw,64px);align-items:center">
+            <div onMouseEnter="{{ showBack }}" onMouseLeave="{{ showFront }}" onClick="{{ flipView }}" style="position:relative;aspect-ratio:3/4;max-height:52vh;margin:0 auto;width:100%;filter:drop-shadow(0 40px 60px rgba(36,27,23,.28));cursor:pointer">
+              <sc-if value="{{ selFront }}" hint-placeholder-val="{{ false }}"><img src="{{ selFront }}" alt="{{ sel.name }} front" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .7s cubic-bezier(.2,.7,.2,1);opacity:{{ frontOpacity }}"></sc-if>
+              <sc-if value="{{ selBack }}" hint-placeholder-val="{{ false }}"><img src="{{ selBack }}" alt="{{ sel.name }} back" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .7s cubic-bezier(.2,.7,.2,1);opacity:{{ backOpacity }}"></sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px;text-align:start">
+              <span style="font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:{{ sel.color }}">{{ sel.meaning }}</span>
+              <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+                <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:clamp(40px,5vw,72px);line-height:1">{{ sel.name }}</h2>
+                <span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-size:clamp(24px,3vw,40px);color:#6e625c">{{ sel.alt }}</span>
+              </div>
+              <p style="margin:0;font-size:16px;line-height:1.7;text-wrap:pretty">{{ sel.desc }}</p>
+              <dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:14px;line-height:1.5">
+                <dt style="color:#6e625c">{{ t.shop.roast }}</dt><dd style="margin:0">{{ sel.roast }}</dd>
+                <dt style="color:#6e625c">{{ t.shop.blend }}</dt><dd style="margin:0">{{ sel.blend }}</dd>
+                <dt style="color:#6e625c">{{ t.shop.notes }}</dt><dd style="margin:0">{{ sel.notes }}</dd>
+              </dl>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;letter-spacing:.2em;text-transform:uppercase">
+            <button onClick="{{ prevCollection }}" style="appearance:none;border:none;background:transparent;font:inherit;color:#6e625c;cursor:pointer;min-height:44px;padding:0" style-hover="color:#241b17">← {{ prevName }}</button>
+            <button onClick="{{ nextCollection }}" style="appearance:none;border:none;background:transparent;font:inherit;color:#6e625c;cursor:pointer;min-height:44px;padding:0" style-hover="color:#241b17">{{ nextName }} →</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <span style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.shop.chooseVariant }}</span>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+              <sc-for list="{{ variants }}" as="v" hint-placeholder-count="3">
+                <button onClick="{{ v.select }}" style="appearance:none;text-align:start;display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px;border:none;border-radius:14px;background:rgba(255,255,255,.6);color:#241b17;font:inherit;cursor:pointer;transition:background .4s,transform .5s cubic-bezier(.2,.7,.2,1)" style-hover="background:#fff;transform:translateY(-2px)">
+                  <span style="display:block;width:28px;height:3px;border-radius:2px;background:{{ sel.color }}"></span>
+                  <span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:20px">{{ v.name }}</span>
+                  <span style="font-size:14px;line-height:1.55;color:#6e625c;text-wrap:pretty">{{ v.desc }}</span>
+                  <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px">{{ t.shop.sizesHint }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ inProduct }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:24px;width:100%;max-width:1200px;animation:wyZoomIn 1.1s cubic-bezier(.2,.7,.2,1) both">
+          <button onClick="{{ backToCategory }}" style="appearance:none;border:none;background:transparent;color:#6e625c;font:inherit;font-size:13px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;width:fit-content;padding:0;display:flex;align-items:center;gap:8px;min-height:44px" style-hover="color:#241b17">← {{ sel.name }}</button>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,64px);align-items:start">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div onMouseEnter="{{ showBack }}" onMouseLeave="{{ showFront }}" onClick="{{ flipView }}" style="position:relative;aspect-ratio:3/4;max-height:58vh;width:100%;filter:drop-shadow(0 40px 60px rgba(36,27,23,.28));cursor:pointer">
+                <div style="position:absolute;inset:0;transition:opacity .6s cubic-bezier(.2,.7,.2,1);opacity:{{ frontOpacity }}"><image-slot id="{{ productSlotFront }}" src="{{ productSrcFront }}" shape="rect" fit="contain" placeholder="{{ productPhFront }}"></image-slot></div>
+                <div style="position:absolute;inset:0;transition:opacity .6s cubic-bezier(.2,.7,.2,1);opacity:{{ backOpacity }};pointer-events:{{ backEvents }}"><image-slot id="{{ productSlotBack }}" src="{{ productSrcBack }}" shape="rect" fit="contain" placeholder="{{ productPhBack }}"></image-slot></div>
+              </div>
+              <div style="display:flex;justify-content:center;gap:8px">
+                <button onClick="{{ showFront }}" style="appearance:none;border:none;font:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;min-height:40px;padding:0 16px;border-radius:999px;cursor:pointer;background:{{ frontBtnBg }};color:{{ frontBtnFg }};transition:all .35s">{{ t.shop.front }}</button>
+                <button onClick="{{ showBack }}" style="appearance:none;border:none;font:inherit;font-size:12px;letter-spacing:.2em;text-transform:uppercase;min-height:40px;padding:0 16px;border-radius:999px;cursor:pointer;background:{{ backBtnBg }};color:{{ backBtnFg }};transition:all .35s">{{ t.shop.back }}</button>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:22px;text-align:start">
+              <span style="font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:{{ sel.color }}">{{ sel.name }} · {{ sel.alt }}</span>
+              <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:clamp(34px,4vw,56px);line-height:1.05">{{ product.name }}</h2>
+              <p style="margin:0;font-size:16px;line-height:1.7;text-wrap:pretty">{{ product.desc }}</p>
+              <dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:14px;line-height:1.5">
+                <dt style="color:#6e625c">{{ t.shop.roast }}</dt><dd style="margin:0">{{ sel.roast }}</dd>
+                <dt style="color:#6e625c">{{ t.shop.blend }}</dt><dd style="margin:0">{{ product.blend }}</dd>
+                <dt style="color:#6e625c">{{ t.shop.notes }}</dt><dd style="margin:0">{{ product.notes }}</dd>
+              </dl>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <span style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.shop.size }}</span>
+                <div style="display:flex;gap:10px;flex-wrap:wrap">
+                  <sc-for list="{{ sizes }}" as="s" hint-placeholder-count="3">
+                    <button onClick="{{ s.select }}" style="appearance:none;font:inherit;font-size:14px;min-height:44px;padding:0 20px;border-radius:999px;cursor:pointer;border:1px solid {{ s.border }};background:{{ s.bg }};color:{{ s.fg }};transition:all .35s">{{ s.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px">
+                <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.shop.price }}</span><span style="font-size:20px;font-weight:600">{{ t.shop.priceTbc }}</span></div>
+                <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.shop.availability }}</span><span style="color:#6e625c">{{ t.shop.availabilityTbc }}</span></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:6px">
+                <div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(36,27,23,.3);border-radius:999px;padding:0 6px;min-height:50px">
+                  <button onClick="{{ qtyDec }}" aria-label="Decrease" style="appearance:none;border:none;background:transparent;font:inherit;font-size:18px;cursor:pointer;width:38px;height:38px;color:#241b17">−</button>
+                  <span style="min-width:16px;text-align:center;font-size:15px">{{ qty }}</span>
+                  <button onClick="{{ qtyInc }}" aria-label="Increase" style="appearance:none;border:none;background:transparent;font:inherit;font-size:18px;cursor:pointer;width:38px;height:38px;color:#241b17">+</button>
+                </div>
+                <button onClick="{{ addToCart }}" style="appearance:none;border:none;display:inline-flex;align-items:center;min-height:50px;padding:0 32px;border-radius:999px;background:{{ sel.color }};color:#fff;font:inherit;font-weight:500;font-size:15px;cursor:pointer;transition:filter .3s" style-hover="filter:brightness(1.1)">{{ t.shop.addToCart }}</button>
+                <span style="font-size:14px;color:#6e625c">{{ cartNote }}</span>
+              </div>
+              <p style="margin:0;font-size:13px;line-height:1.6;color:#6e625c">{{ t.shop.brew }}</p>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <section id="home" data-screen-label="Hero" style="min-height:100svh;display:grid;place-items:center;padding:110px clamp(20px,6vw,80px) 32px;text-align:center;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1);opacity:{{ heroOpacity }};transform:{{ heroTransform }}">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(28px,4vw,52px);width:100%;max-width:1240px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px">
+        <div ref="{{ heroLogoRef }}" style="animation:wyFloat 7.5s ease-in-out infinite;will-change:transform,filter;transition:filter .6s">
+          <img data-reveal="0" src="./assets/logo-dark.png" alt="Wyaana" style="width:min(60vw,320px);height:auto;display:block">
+        </div>
+      </div>
+      <h1 data-reveal="240" style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:clamp(24px,3vw,44px)">{{ t.hero.title }}</h1>
+      <a data-reveal="420" href="#story" aria-label="Scroll down" style="display:flex;flex-direction:column;align-items:center;margin-top:clamp(8px,2vh,24px);color:#241b17;animation:wyArrow 2.6s ease-in-out infinite" style-hover="color:#6e625c">
+        <svg viewBox="0 0 100 44" style="width:clamp(56px,9vw,112px);height:auto;display:block;overflow:visible"><path d="M4 6 C 22 14, 36 30, 50 38 C 64 30, 78 14, 96 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </section><section id="story" data-screen-label="Story" style="padding:clamp(72px,10vw,140px) clamp(20px,6vw,80px)">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
+      <div data-reveal="0" style="display:flex;align-items:center;justify-content:center;padding:clamp(8px,2vw,24px)">
+        <div ref="{{ storyRef }}" dir="ltr" style="display:grid;grid-template-columns:170fr 479fr;align-items:end;gap:0;width:100%;max-width:560px;opacity:.9">
+          <img src="./assets/story-finyals-old.png" alt="Finyals" style="width:100%;height:auto;display:block;margin-right:-14%;position:relative;z-index:1"><img ref="{{ potRef }}" src="./assets/story-dallah-old.png" alt="Dallah" style="width:100%;height:auto;display:block;transform-origin:22% 96%;will-change:transform;margin-bottom:12%">
+          
+        </div>
+      </div>
+      <div data-reveal="140" style="display:flex;flex-direction:column;gap:22px">
+        <span style="font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.story.label }}</span>
+        <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.3;text-wrap:balance">{{ t.story.title }}</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#241b17;text-wrap:pretty">{{ t.story.body }}</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#6e625c;text-wrap:pretty">{{ t.story.body2 }}</p>
+        <a href="./Story.dc.html" style="display:inline-flex;align-items:center;gap:10px;font-weight:500;border-bottom:1px solid #241b17;width:fit-content;padding-bottom:3px;transition:gap .4s,color .3s,border-color .3s" style-hover="gap:18px;color:#6e625c;border-color:#6e625c">{{ t.story.link }} →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" data-screen-label="Shop" style="padding:clamp(72px,10vw,140px) clamp(20px,6vw,80px)">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:32px;align-items:end">
+        <div data-reveal="0" style="display:flex;flex-direction:column;gap:16px">
+          <span style="font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.shop.label }}</span>
+          <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.3;text-wrap:balance">{{ t.shop.title }}</h2>
+        </div>
+        <p data-reveal="140" style="margin:0;font-size:17px;line-height:1.7;color:#6e625c;text-wrap:pretty">{{ t.shop.intro }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ shopCols }};gap:clamp(20px,3vw,48px);width:100%;align-items:end;padding-top:24px">
+        <sc-for list="{{ heroBags }}" as="b" hint-placeholder-count="3">
+          <div data-reveal="{{ b.delay }}" onClick="{{ b.select }}" onMouseEnter="{{ b.enter }}" onMouseLeave="{{ b.leave }}" role="button" tabIndex="0" style="display:flex;flex-direction:column;align-items:center;gap:22px;cursor:pointer;min-width:0;text-align:center">
+            <div ref="{{ b.ref }}" style="position:relative;width:{{ bagWidth }};aspect-ratio:3/4;max-height:34vh;transition:filter .7s cubic-bezier(.2,.7,.2,1)">
+              <img src="{{ b.front }}" alt="{{ b.name }} front" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .7s cubic-bezier(.2,.7,.2,1);opacity:{{ b.frontOpacity }}">
+              <img src="{{ b.back }}" alt="{{ b.name }} back" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:opacity .7s cubic-bezier(.2,.7,.2,1);opacity:{{ b.backOpacity }}">
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .6s;opacity:{{ b.labelOpacity }}">
+              <span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:clamp(16px,2vw,24px);letter-spacing:{{ b.tracking }};text-transform:uppercase;transition:letter-spacing .7s cubic-bezier(.2,.7,.2,1)">{{ b.name }}</span>
+              <span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-size:clamp(14px,1.6vw,20px);color:#6e625c">{{ b.alt }}</span>
+              <span style="font-size:clamp(11px,1.1vw,13px);letter-spacing:.2em;text-transform:uppercase;color:{{ b.labelColor }};transition:color .6s">{{ b.meaning }}</span>
+              <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:{{ b.labelColor }};opacity:{{ b.exploreOpacity }};transition:opacity .6s;margin-top:6px">{{ t.hero.explore }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="finyals" data-screen-label="Finyals &amp; Sets" style="padding:clamp(72px,10vw,140px) clamp(20px,6vw,80px)">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,4vw,48px)">
+      <div data-reveal="0" style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+        <span style="font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.finyals.label }}</span>
+        <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.3;text-wrap:balance">{{ t.finyals.title }}</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px">
+        <sc-for list="{{ finyalItems }}" as="f" hint-placeholder-count="2">
+          <a data-reveal="{{ f.delay }}" href="#contact" style="display:flex;flex-direction:column;gap:16px" style-hover="color:#241b17">
+            <div style="position:relative;aspect-ratio:3/2;border-radius:6px;overflow:hidden;background:transparent;color:#241b17;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(16px,2.4vw,28px);padding:24px;text-align:center">
+              <div style="position:absolute;inset:0;display:grid;place-items:center">
+                <svg viewBox="0 0 300 200" style="width:min(88%,420px);height:auto;overflow:visible">
+                  <ellipse cx="150" cy="100" rx="118" ry="64" fill="none" stroke="rgba(36,27,23,.18)" stroke-width="1" transform="rotate(-32 150 100)"></ellipse>
+                  <ellipse cx="150" cy="100" rx="118" ry="64" fill="none" stroke="#241b17" stroke-width="1" stroke-linecap="round" stroke-dasharray="596" stroke-dashoffset="{{ clock.dayOff }}" transform="rotate(-32 150 100)" style="transition:stroke-dashoffset .95s linear"></ellipse>
+                  <circle cx="{{ clock.dotX }}" cy="{{ clock.dotY }}" r="2.6" fill="#241b17" style="transition:cx .95s linear,cy .95s linear"></circle>
+                </svg>
+              </div>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:clamp(18px,2.6vw,32px) clamp(20px,2.8vw,36px)">
+                <span style="font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:#6e625c">{{ t.finyals.launching }}</span>
+                <span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:400;font-size:clamp(64px,9vw,120px);line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums">{{ clock.days }}</span>
+                <div style="display:flex;justify-content:space-between;width:100%;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#6e625c;font-variant-numeric:tabular-nums">
+                  <span>{{ clock.daysLabel }} · {{ clock.hms }}</span>
+                  <span>{{ t.finyals.date }}</span>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline">
+              <h3 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:24px">{{ f.name }}</h3>
+              <span style="font-size:14px;color:#6e625c;white-space:nowrap">{{ t.finyals.link }}</span>
+            </div>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#6e625c;text-wrap:pretty">{{ f.desc }}</p>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="trade" data-screen-label="Hayyakum / Trade" style="margin:clamp(40px,6vw,80px) 0 0;background:#241b17;color:#f1eeed;padding:clamp(80px,10vw,140px) clamp(20px,6vw,80px)">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+      <div data-reveal="0" style="display:flex;flex-direction:column;gap:28px">
+        <img src="./assets/logo-light.png" alt="Wyaana" style="width:min(100%,380px);height:auto;display:block">
+        <span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:clamp(40px,6vw,88px);line-height:1.15;color:#f1eeed">{{ t.trade.word }}</span>
+      </div>
+      <div data-reveal="160" style="display:flex;flex-direction:column;gap:22px">
+        <span style="font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#f1eeed;opacity:.7">{{ t.trade.label }}</span>
+        <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.32;text-wrap:balance;color:#f1eeed">{{ t.trade.title }}</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#f1eeed;text-wrap:pretty">{{ t.trade.body }}</p>
+        <a href="mailto:trade@wyaana.ae" style="display:inline-flex;align-items:center;min-height:48px;padding:0 28px;border-radius:999px;background:#f1eeed;color:#241b17;font-weight:500;font-size:15px;width:fit-content;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,background .3s" style-hover="background:#fff;color:#241b17;transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.25)">trade@wyaana.ae</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="padding:clamp(80px,10vw,140px) clamp(20px,6vw,80px)">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,72px);align-items:start">
+      <div data-reveal="0" style="display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6e625c">{{ t.contact.label }}</span>
+        <h2 style="margin:0;font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.3;text-wrap:balance">{{ t.contact.title }}</h2>
+      </div>
+      <div data-reveal="160" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;font-size:16px;line-height:1.6">
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6e625c">{{ t.contact.general }}</span><a href="mailto:hello@wyaana.ae" style="border-bottom:1px solid #241b17;width:fit-content;transition:color .3s,border-color .3s,letter-spacing .4s" style-hover="color:#6e625c;border-color:#6e625c;letter-spacing:.02em">ahlan@wyaana.ae</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6e625c">{{ t.contact.trade }}</span><a href="mailto:trade@wyaana.ae" style="border-bottom:1px solid #241b17;width:fit-content;transition:color .3s,border-color .3s,letter-spacing .4s" style-hover="color:#6e625c;border-color:#6e625c;letter-spacing:.02em">trade@wyaana.ae</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6e625c">{{ t.contact.social }}</span><a href="#contact" style="border-bottom:1px solid #241b17;width:fit-content;transition:color .3s,border-color .3s,letter-spacing .4s" style-hover="color:#6e625c;border-color:#6e625c;letter-spacing:.02em">wyaana.ae</a></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6e625c">{{ t.contact.where }}</span><span>{{ t.contact.location }}</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:32px clamp(20px,6vw,80px) 40px;border-top:1px solid rgba(36,27,23,.12)">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:13px;color:#6e625c">
+      <div style="display:flex;align-items:center;gap:14px"><img src="./assets/logo-dark.png" alt="Wyaana" style="height:34px;width:auto;display:block"><span style="font-family:'Aeonik Pro','The Year of the Camel','Wyaana Arabic','IBM Plex Sans Arabic',sans-serif;font-size:16px;color:#241b17">خلّيها إماراتية</span></div>
+      <span>{{ t.footer.made }}</span>
+      <span>© 2026 Wyaana</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ar&quot;],&quot;tsType&quot;:&quot;'en' | 'ar'&quot;,&quot;section&quot;:&quot;Language&quot;},&quot;shadowStrength&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.5,&quot;min&quot;:0,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Background&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Background&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, menuOpen: false, pastFold: false, hover: -1, selected: -1, variant: -1, size: -1, cart: 0, qty: 1, view: 'front', cartOpen: false, items: [] };
+  colors = ['#985333', '#07574D', '#AD8062'];
+  slugs = ['majlis', 'kuthban', 'fares'];
+  vslugs = ['plain', 'cardamom', 'cardamom-saffron'];
+  bgRef = React.createRef();
+  layerRef = React.createRef();
+  lightRef = React.createRef();
+  palmRef = React.createRef();
+  ringRef = React.createRef();
+  storyRef = React.createRef(); potRef = React.createRef(); potA = 0;
+  heroLogoRef = React.createRef();
+  speakerRingRef = React.createRef(); speakerHaloRef = React.createRef(); speakerDotRef = React.createRef();
+  level = 0; haloT = 0;
+  rayRef = React.createRef();
+  px = 0; py = 0; vx = 0; vy = 0; rayO = 0;
+  bagRefs = [React.createRef(), React.createRef(), React.createRef()];
+  // target / eased light position (px) and whether a pointer drives it
+  tx = 0; ty = 0; lx = 0; ly = 0; sy = 0; raf = 0; pointer = false; t0 = 0;
+
+  componentDidMount() {
+    this.tx = this.lx = window.innerWidth * .5; this.ty = this.ly = window.innerHeight * .4;
+    this.touch = window.matchMedia('(hover: none)').matches;
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onLeave = () => { this.pointer = false; };
+    document.addEventListener('mouseleave', this.onLeave);
+    this.onMove = (e) => { if (this.touch) return; this.pointer = true; this.tx = e.clientX; this.ty = e.clientY; if (!this.px) { this.px = e.clientX; this.py = e.clientY; } };
+    this.onScroll = () => { this.sy = window.scrollY; const past = window.scrollY > window.innerHeight * .8; if (past !== this.state.pastFold) this.setState({ pastFold: past }); };
+    window.addEventListener('mousemove', this.onMove, { passive: true });
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.t0 = performance.now();
+    this.timer = setInterval(() => this.setState({ now: Date.now() }), 1000);
+    // ambient sound: on by default; browsers may defer playback until the first tap/click
+    this.audio = new Audio(this.res('ambience', './assets/ambience.mp3')); this.audio.loop = true; this.audio.preload = 'auto'; this.audio.volume = 1;
+    let on = true; try { on = localStorage.getItem('wyaana_sound') !== 'off'; } catch (e) {}
+    this.setState({ sound: on });
+    this.syncAudio = () => {
+      if (!this.audio) return;
+      if (this.ac && this.ac.state !== 'running') this.ac.resume().catch(() => {});
+      if (this.state.sound) { const p = this.audio.play(); if (p && p.then) p.then(() => this.fadeTo(.35)).catch(() => {}); } else { this.fadeTo(0, () => this.audio.pause()); }
+    };
+    // iOS/Android: playback must start inside a user gesture; keep listening until it actually plays
+    this.unlock = () => {
+      this.setupAnalyser(); this.syncAudio();
+      if (this.audio && !this.audio.paused) { for (const ev of ['pointerdown', 'touchend', 'click', 'keydown']) window.removeEventListener(ev, this.unlock); }
+    };
+    for (const ev of ['pointerdown', 'touchend', 'click', 'keydown']) window.addEventListener(ev, this.unlock, { passive: true });
+    setTimeout(() => this.syncAudio(), 300);
+    this.onResize = () => { const n = window.innerWidth < 720; if (n !== this.state.narrow) this.setState({ narrow: n }); };
+    window.addEventListener('resize', this.onResize, { passive: true }); this.onResize();
+    this.io = new IntersectionObserver((entries) => {
+      for (const en of entries) if (en.isIntersecting) {
+        const el = en.target, d = parseInt(el.getAttribute('data-reveal') || '0', 10);
+        el.style.transition = `opacity 1.1s cubic-bezier(.2,.7,.2,1) ${d}ms, transform 1.2s cubic-bezier(.2,.7,.2,1) ${d}ms`;
+        el.style.opacity = '1'; el.style.transform = 'translateY(0)'; el.dataset.revealed = '1';
+        this.io.unobserve(el);
+      }
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    this.observeReveals();
+    const loop = (now) => { this.tick(now); this.raf = requestAnimationFrame(loop); };
+    this.raf = requestAnimationFrame(loop);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('mousemove', this.onMove);
+    window.removeEventListener('scroll', this.onScroll);
+    cancelAnimationFrame(this.raf);
+    clearInterval(this.timer);
+    window.removeEventListener('resize', this.onResize);
+    if (this.audio) { this.audio.pause(); this.audio = null; }
+    clearInterval(this.fadeTimer);
+    if (this.io) this.io.disconnect();
+  }
+  setupAnalyser() {
+    if (this.analyser || !this.audio) return;
+    // iOS Safari silences elements routed through Web Audio unless the context is started in the same gesture; play the file directly there
+    const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /Mac/.test(navigator.platform));
+    if (ios) { this.audio.volume = 1; this.analyser = null; this.gain = null; return; }
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+      this.ac = new AC(); if (this.ac.state !== 'running') this.ac.resume().catch(() => {});
+      const src = this.ac.createMediaElementSource(this.audio);
+      this.analyser = this.ac.createAnalyser(); this.analyser.fftSize = 256; this.analyser.smoothingTimeConstant = .7;
+      this.gain = this.ac.createGain(); this.gain.gain.value = 0;   // iOS ignores element.volume — fade via a gain node instead
+      src.connect(this.analyser); this.analyser.connect(this.gain); this.gain.connect(this.ac.destination);
+      this.audio.volume = 1;
+      this.freq = new Uint8Array(this.analyser.frequencyBinCount);
+    } catch (e) { this.analyser = null; this.gain = null; }
+  }
+  fadeTo(target, done) {
+    clearInterval(this.fadeTimer);
+    const get = () => this.gain ? this.gain.gain.value : this.audio.volume;
+    const set = (v) => { if (this.gain) this.gain.gain.value = v; else this.audio.volume = v; };
+    this.fadeTimer = setInterval(() => {
+      const a = this.audio; if (!a) return clearInterval(this.fadeTimer);
+      const d = target - get();
+      if (Math.abs(d) < .02) { set(target); clearInterval(this.fadeTimer); if (done) done(); return; }
+      set(Math.min(1, Math.max(0, get() + d * .12)));
+    }, 50);
+  }
+  componentDidUpdate() { this.observeReveals(); }
+  observeReveals() {
+    if (!this.io || this.reduced) return;
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el.dataset.revealed || el.dataset.observing) return;
+      el.dataset.observing = '1';
+      el.style.opacity = '0'; el.style.transform = 'translateY(22px)';
+      this.io.observe(el);
+    });
+  }
+  tick(now) {
+    const motion = (this.props.motion ?? true) && !this.reduced;
+    const W = window.innerWidth, H = window.innerHeight;
+    if (!this.pointer || this.touch) {
+      // slow automated light drift (mobile / before first pointer move)
+      const s = (now - this.t0) / 1000;
+      this.tx = W * (.5 + .32 * Math.sin(s * .11)); this.ty = H * (.42 + .22 * Math.cos(s * .083));
+    }
+    const ease = this.pointer && !this.touch ? .055 : .02;
+    this.lx += (this.tx - this.lx) * ease; this.ly += (this.ty - this.ly) * ease;
+    const nx = this.lx / W - .5, ny = this.ly / H - .5;
+    const k = motion ? 1 : 0, sp = Math.min(this.sy, 4000);
+    const bg = this.bgRef.current, sl = this.layerRef.current, lt = this.lightRef.current;
+    if (bg) bg.style.transform = `translate3d(${nx * -22 * k}px, ${(ny * -16 - sp * .03) * k}px, 0) scale(1.04)`;
+    if (sl) sl.style.transform = `translate3d(${nx * -70 * k}px, ${(ny * -50 - sp * .08) * k}px, 0)`;
+    const pm = this.palmRef.current;
+    if (pm) pm.style.transform = `translate3d(${nx * -46 * k}px, ${(ny * -34 - sp * .055) * k}px, 0)`;
+    if (lt) { lt.style.transform = `translate3d(${this.lx}px, ${this.ly - sp}px, 0)`; lt.style.opacity = this.state.hover >= 0 ? '1' : '.72'; }
+    // speaker: ring and dot pulse with the bass of the ambient track
+    const spRing = this.speakerRingRef.current, spDot = this.speakerDotRef.current, spHalo = this.speakerHaloRef.current;
+    if (spRing && spDot && spHalo) {
+      let target = 0;
+      if (this.state.sound !== false && this.audio && !this.audio.paused) {
+        if (this.analyser) { this.analyser.getByteFrequencyData(this.freq); let s = 0; for (let i = 1; i < 10; i++) s += this.freq[i]; target = Math.max(0, (s / 9 / 255 - .35)) * 1.6; }
+        else target = .25 + .25 * Math.sin(now / 420);  // fallback pulse when the analyser is unavailable
+      }
+      this.level += (target - this.level) * (target > this.level ? .5 : .12);
+      const L = Math.min(1, this.level);
+      spRing.style.transform = `rotate(-32deg) scale(${1 + L * .16})`;
+      spDot.style.transform = `scale(${1 + L * 1.1})`;
+      this.haloT = L > .55 && this.haloT <= 0 ? 1 : Math.max(0, this.haloT - .03);
+      spHalo.style.opacity = String(this.haloT * .5);
+      spHalo.style.transform = `rotate(-32deg) scale(${1 + (1 - this.haloT) * .9})`;
+    }
+    // hero logo: shadow falls away from the light, brightens slightly when the light is near
+    const hl = this.heroLogoRef.current;
+    if (hl) {
+      const b = hl.getBoundingClientRect(); const cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+      let dx = cx - this.lx, dy = cy - this.ly; const d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
+      const near = Math.max(0, 1 - d / (W * .8));
+      const len = 10 + near * 16, blur = 18 + near * 10, a = .16 + near * .14;
+      hl.style.filter = `drop-shadow(${dx * len}px ${Math.abs(dy) * len + 8}px ${blur}px rgba(36,27,23,${a})) brightness(${1 + near * .05})`;
+    }
+    // dallah tips forward (toward the spout) as the story scrolls through the viewport
+    const st = this.storyRef.current, pot = this.potRef.current;
+    if (st && pot) {
+      const r = st.getBoundingClientRect();
+      const prog = Math.min(1, Math.max(0, (H - r.top) / (H + r.height)));      // 0 entering bottom → 1 leaving top
+      const target = motion ? -Math.sin(Math.min(1, prog) * Math.PI) * 16 : 0;    // tips up to 16°, eases back
+      this.potA += (target - this.potA) * .08;
+      pot.style.transform = `rotate(${this.potA}deg)`;
+    }
+    // custom cursor ring (exact) + light ray trailing along the motion vector
+    const ring = this.ringRef.current, ray = this.rayRef.current;
+    if (ring && ray && !this.touch) {
+      const dx = this.tx - this.px, dy = this.ty - this.py; this.px = this.tx; this.py = this.ty;
+      this.vx = this.vx * .8 + dx * .2; this.vy = this.vy * .8 + dy * .2;
+      const speed = Math.hypot(this.vx, this.vy);
+      this.rayO += ((this.pointer ? Math.min(1, speed / 30) : 0) - this.rayO) * .08;
+      const hov = this.state.hover >= 0;
+      ring.style.opacity = this.pointer ? '1' : '0';
+      ring.style.transform = `translate3d(${this.tx}px, ${this.ty}px, 0) scale(${hov ? 1.8 : 1})`;
+      ring.style.filter = hov ? 'opacity(.65)' : 'none';
+      ray.style.opacity = String(this.rayO * .45);
+      ray.style.transform = `translate3d(${this.tx - this.vx * 1.4}px, ${this.ty - this.vy * 1.4}px, 0) scale(${.8 + this.rayO * .3})`;
+    }
+    // bag shadows fall away from the light; bags themselves never move
+    this.bagRefs.forEach((r, i) => {
+      const el = r.current; if (!el) return;
+      const b = el.getBoundingClientRect(); const cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+      let dx = cx - this.lx, dy = cy - this.ly; const d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
+      const near = Math.max(0, 1 - d / (W * .9));
+      const hov = this.state.hover === i;
+      const len = 18 + near * 22 + (hov ? 16 : 0), blur = 26 + (hov ? 18 : 0), a = .18 + near * .12 + (hov ? .14 : 0);
+      el.style.filter = `drop-shadow(${dx * len}px ${Math.abs(dy) * len + 14}px ${blur}px rgba(36,27,23,${a}))`;
+    });
+  }
+
+  frond(i, n, spread, len, w, baseAngle) {
+    const a = baseAngle + (i - (n - 1) / 2) * (spread / (n - 1));
+    return React.createElement('div', {
+      key: i,
+      style: {
+        position: 'absolute', left: '50%', bottom: 0, width: w + 'px', height: len + (i % 2) * len * .18 + 'px',
+        marginLeft: -w / 2 + 'px', transformOrigin: '50% 100%', '--a': a + 'deg', transform: `rotate(${a}deg)`,
+        background: '#241b17', borderRadius: '50% 50% 50% 50% / 70% 70% 30% 30%', opacity: .55,
+        animation: `wyFrond ${9 + (i % 3) * 2.6}s ease-in-out ${-(i * 1.9)}s infinite`
+      }
+    });
+  }
+  cluster(key, style, n, spread, len, w, baseAngle, anim, blur) {
+    const fronds = []; for (let i = 0; i < n; i++) fronds.push(this.frond(i, n, spread, len, w, baseAngle));
+    return React.createElement('div', { key, style: { position: 'absolute', filter: `blur(${blur}px)`, animation: anim, ...style } }, fronds);
+  }
+  shadowLayer() {
+    const strength = this.props.shadowStrength ?? 0.5;
+    const motion = (this.props.motion ?? true) && !this.reduced;
+    const play = motion ? 'running' : 'paused';
+    return React.createElement('div', {
+      ref: this.layerRef,
+      style: { position: 'fixed', inset: '-20%', zIndex: -1, pointerEvents: 'none', opacity: strength * .36, willChange: 'transform', animationPlayState: play, mixBlendMode: 'multiply' }
+    }, [
+      this.cluster('a', { right: '-6%', top: '-4%', width: 0, height: 0, transform: 'rotate(140deg)', animation: `wySwayA 17s ease-in-out infinite`, animationPlayState: play }, 9, 110, 620, 26, 0, undefined, 22),
+      this.cluster('b', { left: '-4%', top: '38%', width: 0, height: 0, animation: `wySwayB 21s ease-in-out -6s infinite`, animationPlayState: play }, 7, 95, 520, 22, 150, undefined, 26),
+      this.cluster('c', { left: '42%', top: '110%', width: 0, height: 0, animation: `wySwayA 25s ease-in-out -11s infinite`, animationPlayState: play }, 8, 120, 700, 30, -10, undefined, 30)
+    ]);
+  }
+
+  res(id, path) { const r = typeof window !== 'undefined' && window.__resources; return (r && r[id]) || path; }
+  goShop() {
+    const fallback = () => { window.location.href = './Contact.dc.html'; };
+    const timer = setTimeout(fallback, 4000);
+    fetch('https://shop.wyaana.ae/', { mode: 'no-cors', cache: 'no-store' })
+      .then(() => { clearTimeout(timer); window.location.href = 'https://shop.wyaana.ae/'; })
+      .catch(() => { clearTimeout(timer); fallback(); });
+  }
+  copy() {
+    const en = {
+      brand: 'Wyaana', tag: 'An Emarati Gahwa Brand', langBtn: 'عربي', soundOn: 'Sound on', soundOff: 'Sound off',
+      nav: { menu: 'Menu', home: 'Home', shop: 'Shop', story: 'About', trade: 'Trade', contact: 'Contact' },
+      cart: { title: 'Your bag', empty: 'Your bag is empty.', priceTbc: 'AED —', remove: 'Remove', subtotal: 'Subtotal', checkout: 'Checkout', note: 'Checkout runs through Shopify once the store is connected. Prices shown when confirmed.' },
+      hero: { explore: 'Explore', title: 'KEEP IT EMARATI', sub: 'Gahwa, not Arabic coffee. A dallah, not a coffee pot. A finyal, not a cup. Our culture does not need to be translated to be understood.', cta1: 'Shop the blends', cta2: 'Our story' },
+      story: { label: 'The Story', title: 'It began with a bag of gahwa travelling inside our founder’s luggage.', body: 'And it grew into a belief: our culture does not need to be translated to be understood. It is gahwa, not Arabic coffee. A dallah, not an Arabic coffee pot. A finyal, not an Arabic coffee cup.', body2: 'Discover how one taste of home became Wyaana, and the philosophy behind Keep it Emarati.', link: 'Read the full story' },
+      shop: { label: 'Shop', title: 'Three blends. Three dimensions of who we are.', intro: 'The names of Wyaana’s house blends were chosen to express three dimensions of Emarati identity: where we gather, the land we come from, and the values by which we live.', roast: 'Roast', blend: 'Blend', notes: 'Notes', cta: 'Order this blend', chooseVariant: 'Choose a variation', sizesHint: '3 sizes', size: 'Size', addToCart: 'Add to bag', added: 'Added to your bag', brew: '30 g gahwa · 500 ml water · boil 60 s, rest 30 s, strain into a clean dallah.', front: 'Front', back: 'Back', price: 'Price', priceTbc: 'AED — (TBC)', availability: 'Availability', availabilityTbc: 'To be confirmed', selectSize: 'Select a size' },
+      variants: ['Plain', 'Cardamom', 'Cardamom & Saffron'],
+      sizes: ['Size 1 · TBC', 'Size 2 · TBC', 'Size 3 · TBC'],
+      variantCopy: [
+        ['A welcoming gahwa, crafted for sharing and everyday gatherings.', 'An everyday favourite with the familiar aroma of cardamom.', 'A welcoming gahwa with cardamom and saffron for special gatherings.'],
+        ['The comforting taste of home, inspired by Emarati hospitality.', 'A familiar, homely gahwa with aromatic cardamom.', 'The taste of home, with a celebratory touch of cardamom and saffron.'],
+        ['Sophisticated and distinctive — a sense of occasion in every finyal.', 'Refined and aromatic, pairing a distinctive character with traditional spice.', 'A distinctive single origin, crowned with cardamom and saffron for special guests.']
+      ],
+      withCardamom: ' with cardamom', withBoth: ' with cardamom and saffron', spiced: ' · spiced finish', saffron: 'Rich saffron aroma · ',
+      blends: [
+        { slot: 'blend-majlis', ph: 'Majlis product shot', name: 'Majlis', alt: 'مجلس', meaning: 'Where we gather', desc: 'The majlis is where we welcome guests, gather with family and friends, and trade stories. Welcoming and versatile — an easy first cup of Emarati gahwa.', roast: 'Medium', blend: 'Nicaraguan, Brazilian & Ceyloni', notes: 'Brown sugar · balanced acidity · smooth finish' },
+        { slot: 'blend-kuthban', ph: 'Kuthban product shot', name: 'Kuthban', alt: 'كثبان', meaning: 'The land we come from', desc: 'The dunes are the sands of our land and the features of our home. The comforting taste of home, inspired by Emarati hospitality.', roast: 'Medium to dark', blend: 'Brazilian, Ceyloni & Nicaraguan', notes: 'Nutty · creamy caramel · lingering sweetness' },
+        { slot: 'blend-fares', ph: 'Fares product shot', name: 'Fares', alt: 'فارس', meaning: 'The values we live by', desc: 'The knight embodies chivalry, generosity and good character — the Emarati sana’a. Sophisticated and distinctive, a considered choice for special guests.', roast: 'Medium', blend: 'Single-origin Nicaraguan', notes: 'Tangy acidity · tobacco · orange zest · clean finish' }
+      ],
+      finyals: { label: 'Finyals & Sets', title: 'Serve it the way it is meant to be served.', link: 'Notify me', launching: 'Launching in', date: '05 · 11 · 2026', units: ['Days', 'Hours', 'Min', 'Sec'], items: [
+        { slot: 'finyal-set', ph: 'Finyal set photo', name: 'Finyal sets', desc: 'Finyals engraved with a pattern inspired by the cup of the Founding Father, Sheikh Zayed.' },
+        { slot: 'gift-set', ph: 'Gift tray photo', name: 'Gift sets', desc: 'Majlis, Kuthban and Fares on one tray carrying the colours of our flag — a gift of Emarati hospitality.' }
+      ] },
+      trade: { word: 'Hayyakum', label: 'Trade', title: 'Bring the spirit of Emarati hospitality to every guest experience.', body: 'Wyaana partners with hotels, restaurants, cafés, event venues and businesses to make gahwa a memorable part of the welcome. From distinctive coffee blends and dates to serving pieces, gifts and tailored experience stations, we shape each offering around your space, guests and occasion. Whether you’re refreshing a daily service or creating a moment guests will talk about, we’d love to hear what you have in mind.' },
+      contact: { label: 'Contact', title: 'Hayyakum we’d love to hear from you.', general: 'General', trade: 'Trade', social: 'Instagram', where: 'Where', location: 'United Arab Emirates' },
+      footer: { made: 'Produced in the United Arab Emirates' }
+    };
+    const ar = {
+      brand: 'ويّانا', tag: 'قهوة إماراتية', langBtn: 'EN', soundOn: 'الصوت مفعّل', soundOff: 'الصوت مطفأ',
+      nav: { menu: 'القائمة', home: 'الرئيسية', shop: 'المتجر', story: 'عن ويّانا', trade: 'الشركاء', contact: 'تواصل' },
+      cart: { title: 'حقيبتك', empty: 'حقيبتك فارغة.', priceTbc: '— د.إ', remove: 'إزالة', subtotal: 'المجموع', checkout: 'إتمام الشراء', note: 'يتم الدفع عبر Shopify بعد ربط المتجر. تُعرض الأسعار عند تأكيدها.' },
+      hero: { explore: 'استكشف', title: 'خلّيها إماراتية', sub: 'قهوة، مو «قهوة عربية». دلّة، مو إبريق. فنيال، مو فنجان. ثقافتنا ما تحتاج ترجمة عشان تنفهم.', cta1: 'تسوّق الخلطات', cta2: 'قصّتنا' },
+      story: { label: 'القصة', title: 'بدأت بكيس قهوة مسافر في شنطة مؤسّسنا.', body: 'وكبرت لتصير قناعة: ثقافتنا ما تحتاج ترجمة عشان تنفهم. هي قهوة، مو «قهوة عربية». دلّة، مو إبريق قهوة عربي. فنيال، مو فنجان قهوة عربي.', body2: 'اكتشف كيف صارت رشفة من البيت «ويّانا»، والفلسفة اللي وراء «خلّيها إماراتية».', link: 'اقرأ القصة كاملة' },
+      shop: { label: 'المتجر', title: 'ثلاث خلطات. ثلاثة جوانب من هويتنا.', intro: 'اخترنا أسماء مجلس، كثبان، وفارس لأنها تعبّر عن ثلاثة جوانب من هويتنا الإماراتية: المكان اللي يجمعنا، والأرض اللي منها جذورنا، والسنع اللي نعيش عليه.', roast: 'التحميص', blend: 'الخلطة', notes: 'الإيحاءات', cta: 'اطلب هذي الخلطة', chooseVariant: 'اختر النكهة', sizesHint: '3 أحجام', size: 'الحجم', addToCart: 'أضف إلى الحقيبة', added: 'أُضيف إلى حقيبتك', brew: '30 غ قهوة · 500 مل ماء · اغلِها 60 ثانية، أرحها 30 ثانية، ثم صفِّها في دلّة نظيفة.', front: 'الواجهة', back: 'الخلف', price: 'السعر', priceTbc: '— د.إ (قيد التأكيد)', availability: 'التوفر', availabilityTbc: 'قيد التأكيد', selectSize: 'اختر الحجم' },
+      variants: ['سادة', 'بالهيل', 'بالهيل والزعفران'],
+      sizes: ['الحجم 1 · قيد التأكيد', 'الحجم 2 · قيد التأكيد', 'الحجم 3 · قيد التأكيد'],
+      variantCopy: [
+        ['قهوة ترحّب بالجميع، للمشاركة واللّقاءات اليومية.', 'قهوة لكل يوم، بعبير الهيل المألوف.', 'قهوة ترحّب بالضيوف بالهيل والزعفران، للمّات المميّزة.'],
+        ['مذاق البيت المألوف، من أصالة الضيافة الإماراتية.', 'قهوة بطابع البيت المألوف وعبير الهيل.', 'مذاق البيت، بلمسة احتفاء من الهيل والزعفران.'],
+        ['قهوة راقية ومميّزة؛ إحساس بالمناسبة في كل فنيال.', 'قهوة أنيقة وعطرة، تجمع طابعها المميّز بالتوابل الأصيلة.', 'بن أحادي المصدر يتوّجه الهيل والزعفران، لضيوفك المميّزين.']
+      ],
+      withCardamom: '، مع الهيل', withBoth: '، مع الهيل والزعفران', spiced: ' · نهاية بلمسة توابل', saffron: 'عبير زعفران غني · ',
+      blends: [
+        { slot: 'blend-majlis', ph: 'Majlis product shot', name: 'مجلس', alt: 'Majlis', meaning: 'المكان اللي يجمعنا', desc: 'المجلس جزء من حياتنا؛ فيه نرحّب بالضيف، ونجتمع بالأهل والربع، ونتبادل السوالف. اسمه يجسّد كرمنا وضيافتنا وحلاوة يمعتنا.', roast: 'متوسطة', blend: 'نيكاراغوي وبرازيلي وسيلاني', notes: 'سكر بني · حموضة متوازنة · نهاية ناعمة' },
+        { slot: 'blend-kuthban', ph: 'Kuthban product shot', name: 'كثبان', alt: 'Kuthban', meaning: 'الأرض اللي منها جذورنا', desc: 'الكثبان هي رمال أرضنا وملامح ديرتنا. اسمها يعبّر عن ارتباطنا بالأرض اللي نشأنا عليها، وعن جذورنا وتراثنا.', roast: 'متوسطة إلى داكنة', blend: 'برازيلي وسيلاني ونيكاراغوي', notes: 'مكسرات · كراميل كريمي · حلاوة ممتدة' },
+        { slot: 'blend-fares', ph: 'Fares product shot', name: 'فارس', alt: 'Fares', meaning: 'السنع اللي نعيش عليه', desc: 'الفارس يجسّد النخوة والشهامة وطيب الأخلاق. اسمه يعبّر عن السنع الإماراتي؛ في احترامنا للناس، وإكرامنا للضيف، والقيم اللي تربّينا عليها.', roast: 'متوسطة', blend: 'نيكاراغوي أحادي المصدر', notes: 'حموضة منعشة · تبغ · قشر برتقال · نهاية نقية' }
+      ],
+      finyals: { label: 'فناييل وأطقم', title: 'قدّمها مثل ما لازم تتقدّم.', link: 'أبلغني', launching: 'الإطلاق بعد', date: '05 · 11 · 2026', units: ['يوم', 'ساعة', 'دقيقة', 'ثانية'], items: [
+        { slot: 'finyal-set', ph: 'Finyal set photo', name: 'أطقم الفناييل', desc: 'فناييل تحمل نقشًا مستوحى من النقش الذي زيّن فنيال الوالد المؤسّس، الشيخ زايد.' },
+        { slot: 'gift-set', ph: 'Gift tray photo', name: 'أطقم الهدايا', desc: 'مجلس وكثبان وفارس على صينية تجتمع عليها ألوان علمنا؛ هدية من كرم الضيافة الإماراتية.' }
+      ] },
+      trade: { word: 'حيّاكم', label: 'الشركاء', title: 'خلّ روح الضيافة الإماراتية حاضرة في كل تجربة ضيف.', body: 'تتعاون ويّانا مع الفنادق والمطاعم والمقاهي وأماكن الفعاليات والشركات لتكون القهوة جزءًا لا يُنسى من الترحيب. من خلطات القهوة المميزة والتمور إلى أدوات التقديم والهدايا ومحطات التجربة المصمّمة خصيصًا، نشكّل كل عرض حول مكانكم وضيوفكم ومناسبتكم. سواء كنتم تجدّدون خدمة يومية أو تصنعون لحظة يتحدث عنها الضيوف، يسعدنا نسمع منكم.' },
+      contact: { label: 'تواصل', title: 'حيّاكم، يسعدنا نسمع منكم.', general: 'عام', trade: 'الشركاء', social: 'إنستغرام', where: 'الموقع', location: 'الإمارات العربية المتحدة' },
+      footer: { made: 'أُنتج في الإمارات العربية المتحدة' }
+    };
+    return { en, ar };
+  }
+
+  speak(lang) {
+    const synth = typeof window !== 'undefined' && window.speechSynthesis; if (!synth || typeof SpeechSynthesisUtterance === 'undefined') return;
+    if (synth.speaking || this.state.speaking) { synth.cancel(); this.setState({ speaking: false }); return; }
+    const root = document.querySelector('[dir]'); if (!root) return;
+    const c = root.cloneNode(true);
+    c.querySelectorAll('header,footer,button,a,script,style,svg,img').forEach(n => n.remove());
+    const u = new SpeechSynthesisUtterance(c.innerText.replace(/\s+/g, ' ').trim());
+    u.lang = lang === 'ar' ? 'ar-AE' : 'en-GB'; u.rate = .95;
+    u.onend = () => this.setState({ speaking: false }); u.onerror = () => this.setState({ speaking: false });
+    synth.speak(u); this.setState({ speaking: true });
+  }
+  renderVals() {
+    const lang = this.state.lang ?? (typeof localStorage !== 'undefined' && localStorage.getItem('wyaana_lang')) ?? this.props.defaultLang ?? 'en';
+    const t = this.copy()[lang];
+    const { hover, selected, variant, size, cart, qty, view, cartOpen, items } = this.state;
+    const blends = t.blends.map((b, i) => ({ ...b, color: this.colors[i], front: this.res(`${this.slugs[i]}-front`, `./assets/products/${this.slugs[i]}-front.webp`), back: this.res(`${this.slugs[i]}-back`, `./assets/products/${this.slugs[i]}-back.webp`) }));
+    const heroBags = blends.map((b, i) => ({
+      ...b, ref: this.bagRefs[i], delay: String(i * 140),
+      frontOpacity: hover === i ? 0 : 1, backOpacity: hover === i ? 1 : 0,
+      labelOpacity: hover === -1 || hover === i ? 1 : .45,
+      tracking: hover === i ? '.3em' : '.14em',
+      labelColor: hover === i ? b.color : '#6e625c',
+      exploreOpacity: hover === i ? 1 : 0,
+      enter: () => this.setState({ hover: i }), leave: () => this.setState({ hover: -1 }),
+      select: () => this.goShop()
+    }));
+    const si = selected >= 0 ? selected : 0;
+    const sel = blends[si];
+    const variants = t.variants.map((name, vi) => ({
+      name, desc: t.variantCopy[si][vi],
+      select: () => this.setState({ variant: vi, size: -1, qty: 1, view: 'front', cart: 0 })
+    }));
+    const cartItems = items.map((it, k) => ({
+      slot: `${this.slugs[it.c]}-${this.vslugs[it.v]}-front`, src: it.v === 0 ? blends[it.c].front : '',
+      name: `${blends[it.c].name} · ${t.variants[it.v]}`, size: t.sizes[it.s], qty: it.q,
+      inc: () => this.setState(s => ({ items: s.items.map((x, j) => j === k ? { ...x, q: x.q + 1 } : x) })),
+      dec: () => this.setState(s => ({ items: s.items.map((x, j) => j === k ? { ...x, q: Math.max(1, x.q - 1) } : x) })),
+      remove: () => this.setState(s => ({ items: s.items.filter((_, j) => j !== k) }))
+    }));
+    const cartCount = items.reduce((n, it) => n + it.q, 0);
+    const launch = new Date('2026-11-05T00:00:00+04:00').getTime();
+    const left = Math.max(0, launch - (this.state.now ?? Date.now()));
+    const pad2 = (n) => String(n).padStart(2, '0');
+    const cdVals = [Math.floor(left / 864e5), Math.floor(left / 36e5) % 24, Math.floor(left / 6e4) % 60, Math.floor(left / 1e3) % 60];
+    const countdown = t.finyals.units.map((label, k) => ({ label, value: pad2(cdVals[k]) }));
+    const totalDays = 12; // span of the countdown window the day ring represents
+    const off = (C, p) => (C * (1 - Math.min(1, Math.max(0, p)))).toFixed(1);
+    const clock = {
+      days: pad2(cdVals[0]), daysLabel: t.finyals.units[0],
+      hms: `${pad2(cdVals[1])}:${pad2(cdVals[2])}:${pad2(cdVals[3])}`,
+      dayOff: off(596, (cdVals[0] + cdVals[1] / 24) / totalDays)
+    };
+    { // seconds marker travelling the tilted ellipse (rx 118, ry 64, rotated -32° about 150,100)
+      const th = (cdVals[3] / 60) * Math.PI * 2 - Math.PI / 2, a = -32 * Math.PI / 180;
+      const ex = 118 * Math.cos(th), ey = 64 * Math.sin(th);
+      clock.dotX = (150 + ex * Math.cos(a) - ey * Math.sin(a)).toFixed(1);
+      clock.dotY = (100 + ex * Math.sin(a) + ey * Math.cos(a)).toFixed(1);
+    }
+    const vi = variant >= 0 ? variant : 0;
+    const product = {
+      name: `${sel.name} · ${t.variants[vi]}`,
+      desc: t.variantCopy[si][vi],
+      blend: sel.blend + (vi === 1 ? t.withCardamom : vi === 2 ? t.withBoth : ''),
+      notes: (vi === 2 ? t.saffron : '') + sel.notes + (vi > 0 ? t.spiced : '')
+    };
+    const sizes = t.sizes.map((label, k) => ({
+      label, select: () => this.setState({ size: k, cart: 0 }),
+      bg: size === k ? '#241b17' : 'transparent', fg: size === k ? '#f1eeed' : '#241b17', border: size === k ? '#241b17' : 'rgba(36,27,23,.3)'
+    }));
+    const slug = `${this.slugs[si]}-${this.vslugs[vi]}`;
+    return {
+      t, dir: lang === 'ar' ? 'rtl' : 'ltr',
+      bgRef: this.bgRef, lightRef: this.lightRef, palmRef: this.palmRef, ringRef: this.ringRef, rayRef: this.rayRef, storyRef: this.storyRef, potRef: this.potRef, heroLogoRef: this.heroLogoRef, speakerRingRef: this.speakerRingRef, speakerHaloRef: this.speakerHaloRef, speakerDotRef: this.speakerDotRef,
+      cursorStyle: this.touch ? 'auto' : 'none',
+      orbMove: (e) => {
+        const el = e.currentTarget, r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        el.style.transition = 'transform .35s cubic-bezier(.2,.7,.2,1), background .35s';
+        el.style.transform = `rotateX(${((.5 - y) * 14).toFixed(2)}deg) rotateY(${((x - .5) * 16).toFixed(2)}deg)`;
+        el.style.background = `radial-gradient(circle at ${(x * 100).toFixed(1)}% ${(y * 100).toFixed(1)}%,rgba(255,255,255,1) 0%,rgba(255,255,255,.55) 14%,rgba(255,255,255,.12) 34%,rgba(241,238,237,.05) 58%,rgba(36,27,23,.04) 78%,rgba(36,27,23,.16) 96%,rgba(36,27,23,.22) 100%)`;
+      },
+      orbLeave: (e) => {
+        const el = e.currentTarget;
+        el.style.transition = 'transform .8s cubic-bezier(.2,.7,.2,1), background .8s';
+        el.style.transform = 'none';
+        el.style.background = 'radial-gradient(circle at 30% 24%,rgba(255,255,255,1) 0%,rgba(255,255,255,.55) 14%,rgba(255,255,255,.12) 34%,rgba(241,238,237,.05) 58%,rgba(36,27,23,.04) 78%,rgba(36,27,23,.16) 96%,rgba(36,27,23,.22) 100%)';
+      },
+      palmOpacity: (this.props.shadowStrength ?? 0.5) * .6,
+      shadowLayer: this.shadowLayer(),
+      heroBags, goShopNav: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ menuOpen: false }); this.goShop(); }, hasSelected: selected >= 0, sel, selFront: sel.front || '', selBack: sel.back || '', pastFold: this.state.pastFold, topLabel: lang === 'ar' ? 'للأعلى' : 'Back to top', toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      inCategory: variant < 0, inProduct: variant >= 0,
+      variants, product, sizes,
+      productSlotFront: `${slug}-front`, productSlotBack: `${slug}-back`,
+      productPhFront: `${sel.alt} ${t.variants[vi]} — front`, productPhBack: `${sel.alt} ${t.variants[vi]} — back`,
+      productSrcFront: vi === 0 ? sel.front : '', productSrcBack: vi === 0 ? sel.back : '',
+      flipView: () => this.setState(s => ({ view: s.view === 'front' ? 'back' : 'front' })),
+      cartNote: cart === 1 ? `${t.shop.added} · ${t.sizes[size]}` : cart === 2 ? t.shop.selectSize : '',
+      addToCart: () => {
+        if (size < 0) { this.setState({ cart: 2 }); return; }
+        this.setState(s => {
+          const idx = s.items.findIndex(x => x.c === si && x.v === vi && x.s === size);
+          const items = idx >= 0 ? s.items.map((x, j) => j === idx ? { ...x, q: x.q + qty } : x) : [...s.items, { c: si, v: vi, s: size, q: qty }];
+          return { items, cart: 1, cartOpen: true };
+        });
+      },
+      qty, qtyInc: () => this.setState(s => ({ qty: s.qty + 1 })), qtyDec: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      frontOpacity: view === 'front' ? 1 : 0, backOpacity: view === 'back' ? 1 : 0, backEvents: view === 'back' ? 'auto' : 'none',
+      showFront: () => this.setState({ view: 'front' }), showBack: () => this.setState({ view: 'back' }),
+      frontBtnBg: view === 'front' ? '#241b17' : 'transparent', frontBtnFg: view === 'front' ? '#f1eeed' : '#6e625c',
+      backBtnBg: view === 'back' ? '#241b17' : 'transparent', backBtnFg: view === 'back' ? '#f1eeed' : '#6e625c',
+      prevName: blends[(si + 2) % 3].name, nextName: blends[(si + 1) % 3].name,
+      prevCollection: () => this.setState({ selected: (si + 2) % 3, variant: -1, cart: 0 }),
+      nextCollection: () => this.setState({ selected: (si + 1) % 3, variant: -1, cart: 0 }),
+      cartItems, cartCount, cartOpen, cartEmpty: items.length === 0, countdown, clock,
+      finyalItems: t.finyals.items.map((f, i) => ({ ...f, delay: String(i * 160) })),
+      soundLabel: this.state.sound === false ? t.soundOff : t.soundOn,
+      soundTracking: lang === 'ar' ? '0' : '.3em',
+      soundDotOpacity: this.state.sound === false ? 0 : 1, soundDotScale: this.state.sound === false ? .4 : 1,
+      toggleSound: () => {
+        const next = this.state.sound === false; try { localStorage.setItem('wyaana_sound', next ? 'on' : 'off'); } catch (e) {}
+        this.setupAnalyser(); if (this.ac) this.ac.resume().catch(() => {});
+        if (next && this.audio) { const p = this.audio.play(); if (p && p.catch) p.catch(() => {}); }  // start inside the tap itself for iOS
+        this.setState({ sound: next }, () => this.syncAudio());
+      },
+      shopCols: this.state.narrow ? 'minmax(0,1fr)' : 'repeat(3,minmax(0,1fr))', bagWidth: this.state.narrow ? '58%' : '50%',
+      openCart: () => this.setState({ cartOpen: true, menuOpen: false }), closeCart: () => this.setState({ cartOpen: false }),
+      stop: (e) => e.stopPropagation(),
+      backToCategory: () => this.setState({ variant: -1, cart: 0 }),
+      heroOpacity: selected >= 0 ? 0 : 1, heroTransform: selected >= 0 ? 'scale(1.06)' : 'scale(1)',
+      deselect: () => this.setState({ selected: -1, variant: -1, cart: 0 }),
+      toggleListen: () => window.WyaanaListen.open(lang, this.ref), listenLabel: this.state.speaking ? (lang === 'ar' ? 'إيقاف' : 'Stop') : (lang === 'ar' ? 'استمع' : 'Listen'), toggleLang: () => { const next = lang === 'ar' ? 'en' : 'ar'; try { localStorage.setItem('wyaana_lang', next); } catch (e) {} this.setState({ lang: next }); },
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
